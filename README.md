@@ -14,6 +14,13 @@ The FortiOS Syntax Pro extension enhances your FortiOS configuration file editin
 - **Documentation**: Access documentation links and hover information to quickly understand FortiOS commands and parameters.
 - **Version Compatibility**: Designed to work seamlessly with Visual Studio Code version 1.50 and higher.
 
+## Supported Fortinet Products
+![FortiOS Versions](https://img.shields.io/badge/FortiOS-7.0.0--7.4.1-Red.svg)
+![FortiManager](https://img.shields.io/badge/FortiManager-7.0.0--7.4.0-Red.svg)
+![FortiAnalyzer](https://img.shields.io/badge/FortiAnalyzer-7.0.0--7.4.0-Red.svg)
+![FortiSwitchOS](https://img.shields.io/badge/FortiSwitchOS-6.0.0--7.4.1-Red.svg)
+
+
 ## Installation
 
 1. Open Visual Studio Code.
