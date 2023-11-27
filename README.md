@@ -1,18 +1,16 @@
 # FortiOS Syntax Pro
 
-![Extension Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Extension Version](https://img.shields.io/badge/version-0.0.1-blue.svg)
 ![VSCode Version](https://img.shields.io/badge/VS%20Code-1.50+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## Overview
 
-The FortiOS Syntax Pro extension enhances your FortiOS configuration file editing experience in Visual Studio Code. It provides comprehensive syntax highlighting, snippets, and IntelliSense for Fortinet's FortiOS configuration language, making it easier to work with and understand your FortiOS configurations.
+The FortiOS Syntax Pro extension enhances your FortiOS configuration file editing experience in Visual Studio Code. It provides comprehensive syntax highlighting for Fortinet's FortiOS configuration language, making it easier to work with and understand your FortiOS configurations.
 
 ## Features
 
 - **Syntax Highlighting**: Enjoy clear and readable FortiOS configuration files with syntax highlighting tailored to FortiOS commands and structures.
-- **Snippets**: Accelerate your workflow with pre-defined templates for common FortiOS configuration patterns.
-- **IntelliSense (Planned)**: Receive real-time suggestions and error checking to improve your FortiOS configuration accuracy.
 - **Documentation**: Access documentation links and hover information to quickly understand FortiOS commands and parameters.
 - **Version Compatibility**: Designed to work seamlessly with Visual Studio Code version 1.50 and higher.
 
@@ -34,7 +32,6 @@ The FortiOS Syntax Pro extension enhances your FortiOS configuration file editin
 
 - [ ] Release IntelliSense feature for FortiOS configurations.
 - [ ] Support for additional Fortinet products and configurations.
-- [ ] [Your feature ideas here...]
 
 ## Contribution
 
@@ -43,7 +40,3 @@ Contributions to the FortiOS Syntax Pro extension project are welcome! Whether y
 ## License
 
 This extension is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Special thanks to the [VS Code team](https://code.visualstudio.com/) for creating an incredible development environment.
