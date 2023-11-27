@@ -1,0 +1,25 @@
+{
+  "name": "fortios-syntax-pro",
+  "displayName": "FortiOS Syntax Pro",
+  "description": "Enhance your FortiOS configuration file editing experience with syntax highlighting and improved readability using FortiOS Syntax Pro.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "FortiOS",
+      "aliases": ["FortiOS Configuration", "FortiOS"],
+      "extensions": [".conf",".fgt",".fsw",".fgm",".faz",".fap",".fortigate",".ftc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "FortiOS",
+      "scopeName": "source.fortios",
+      "path": "./syntaxes/FortiOS.tmLanguage.json"
+    }]
+  }
+}
