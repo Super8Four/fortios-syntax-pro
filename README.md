@@ -15,10 +15,29 @@ The FortiOS Syntax Pro extension enhances your FortiOS configuration file editin
 - **Version Compatibility**: Designed to work seamlessly with Visual Studio Code version 1.50 and higher.
 
 ## Supported Fortinet Products
-![FortiOS Versions](https://img.shields.io/badge/FortiOS-7.0.0--7.4.1-Red.svg)
-![FortiManager](https://img.shields.io/badge/FortiManager-7.0.0--7.4.0-Red.svg)
-![FortiAnalyzer](https://img.shields.io/badge/FortiAnalyzer-7.0.0--7.4.0-Red.svg)
-![FortiSwitchOS](https://img.shields.io/badge/FortiSwitchOS-6.0.0--7.4.1-Red.svg)
+## Supported Fortinet Products
+### FortiOS
+![FortiOS 7.0](https://img.shields.io/badge/FortiOS-7.0.0-Red.svg)
+![FortiOS 7.2](https://img.shields.io/badge/FortiOS-7.2.0-Red.svg)
+![FortiOS 7.4](https://img.shields.io/badge/FortiOS-7.4.1-Red.svg)
+
+### FortiAnalyzer
+![FortiAnalyzer 7.0](https://img.shields.io/badge/FortiAnalyzer-7.0.0-Red.svg)
+![FortiAnalyzer 7.2](https://img.shields.io/badge/FortiAnalyzer-7.2.0-Red.svg)
+![FortiAnalyzer 7.4](https://img.shields.io/badge/FortiAnalyzer-7.4.0-Red.svg)
+
+### FortiManager
+![FortiManager 7.0](https://img.shields.io/badge/FortiManager-7.0.0-Red.svg)
+![FortiManager 7.2](https://img.shields.io/badge/FortiManager-7.2.0-Red.svg)
+![FortiManager 7.4](https://img.shields.io/badge/FortiManager-7.4.0-Red.svg)
+
+### FortiSwitchOS
+![FortiSwitchOS 6.0](https://img.shields.io/badge/FortiSwitchOS-6.0.0-Red.svg)
+![FortiSwitchOS 6.2](https://img.shields.io/badge/FortiSwitchOS-6.2.0-Red.svg)
+![FortiSwitchOS 6.4](https://img.shields.io/badge/FortiSwitchOS-6.4.0-Red.svg)
+![FortiSwitchOS 7.0](https://img.shields.io/badge/FortiSwitchOS-7.0.0-Red.svg)
+![FortiSwitchOS 7.2](https://img.shields.io/badge/FortiSwitchOS-7.2.0-Red.svg)
+![FortiSwitchOS 7.4](https://img.shields.io/badge/FortiSwitchOS-7.4.1-Red.svg)
 
 
 ## Installation
