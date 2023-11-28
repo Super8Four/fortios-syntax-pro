@@ -1,32 +1,67 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "FortiOS Configuration",
-	"patterns": [
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "FortiOS Configuration",
+    "patterns": [
+        {
+            "include": "#commands"
+        },
+        {
+            "include": "#sub-commands"
+        },
+        {
+            "include": "#set-variables"
+        },
+        {
+            "include": "#strings"
+        }
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.FortiOS",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.FortiOS",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.FortiOS",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.fortios"
+            "include": "#ip-addresses"
+        }
+    ],
+    "repository": {
+        "commands": {
+            "patterns": [
+                {
+                    "name": "keyword.command.FortiOS",
+                    "match": "\\b(config)\\s+(alertemail|antivirus|application|authentication|automation|casb|certificate|dlp|dnsfilter|emailfilter|endpoint-control|ethernet-oam|extension-controller|file-filter|firewall|ftp-proxy|icap|ips|log|monitoring|report|router|rule|sctp-filter|ssh-filter|switch-controller|system|user|videofilter|virtual-patch|voip|vpn|waf|wanopt|web-proxy|webfilter|wireless-controller)\\b"
+                }
+            ]
+        },
+        "sub-commands": {
+            "patterns": [
+                {
+                    "name": "keyword.subcommand.FortiOS",
+                    "match": "\\b(alertemail|antivirus|application|authentication|automation|casb|certificate|dlp|dnsfilter|emailfilter|endpoint-control|ethernet-oam|extension-controller|file-filter|firewall|ftp-proxy|icap|ips|log|monitoring|report|router|rule|sctp-filter|ssh-filter|switch-controller|system|user|videofilter|virtual-patch|voip|vpn|waf|wanopt|web-proxy|webfilter|wireless-controller)(?:-\\w+)?\\b"
+                }
+            ]
+        },
+        "set-variables": {
+            "patterns": [
+                {
+                    "name": "variable.assignment.FortiOS",
+                    "match": "\\bset\\s+(\\S+)"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.FortiOS",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.FortiOS",
+                    "match": "\\\\."
+                }
+            ]
+        }
+		"ip-addresses": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.ip-address.FortiOS",
+                    "match": "(\"?)(\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\s+(?:\\d{1,3}\\.){3}\\d{1,3}|/\\d{1,2})?\\b)\\1"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.fortios"
 }
