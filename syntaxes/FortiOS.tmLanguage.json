@@ -3,62 +3,67 @@
     "name": "FortiOS Configuration",
     "patterns": [
         {
+            "include": "#config-blocks"
+        },
+        {
             "include": "#commands"
-        },
-        {
-            "include": "#sub-commands"
-        },
-        {
-            "include": "#set-variables"
         },
         {
             "include": "#strings"
         }
-		{
-            "include": "#ip-addresses"
-        }
     ],
     "repository": {
+        "config-blocks": {
+            "patterns": [
+                {
+                    "name": "meta.config-block.fortios",
+                    "begin": "\\bconfig\\s+(\\w+)\\b",
+                    "end": "\\bend\\b",
+                    "beginCaptures": {
+                        "1": { "name": "keyword.command.fortios" }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#commands"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.edit-block.fortios",
+                    "begin": "\\bedit\\s+",
+                    "end": "\\bnext\\b",
+                    "patterns": [
+                        {
+                            "include": "#commands"
+                        }
+                    ]
+                }
+            ]
+        },
         "commands": {
             "patterns": [
                 {
-                    "name": "keyword.command.FortiOS",
-                    "match": "\\b(config)\\s+(alertemail|antivirus|application|authentication|automation|casb|certificate|dlp|dnsfilter|emailfilter|endpoint-control|ethernet-oam|extension-controller|file-filter|firewall|ftp-proxy|icap|ips|log|monitoring|report|router|rule|sctp-filter|ssh-filter|switch-controller|system|user|videofilter|virtual-patch|voip|vpn|waf|wanopt|web-proxy|webfilter|wireless-controller)\\b"
-                }
-            ]
-        },
-        "sub-commands": {
-            "patterns": [
+                    "name": "keyword.other.fortios",
+                    "match": "\\b(set|show|get|edit|config|next|end)\\b"
+                },
                 {
-                    "name": "keyword.subcommand.FortiOS",
-                    "match": "\\b(alertemail|antivirus|application|authentication|automation|casb|certificate|dlp|dnsfilter|emailfilter|endpoint-control|ethernet-oam|extension-controller|file-filter|firewall|ftp-proxy|icap|ips|log|monitoring|report|router|rule|sctp-filter|ssh-filter|switch-controller|system|user|videofilter|virtual-patch|voip|vpn|waf|wanopt|web-proxy|webfilter|wireless-controller)(?:-\\w+)?\\b"
-                }
-            ]
-        },
-        "set-variables": {
-            "patterns": [
+                    "name": "constant.numeric.ip-address.fortios",
+                    "match": "(\"?)(\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\s+(?:\\d{1,3}\\.){3}\\d{1,3}|/\\d{1,2})?\\b)\\1"
+                },
                 {
-                    "name": "variable.assignment.FortiOS",
-                    "match": "\\bset\\s+(\\S+)"
+                    "name": "variable.parameter.fortios",
+                    "match": "\\b\\w+(-\\w+)*\\b"
                 }
             ]
         },
         "strings": {
-            "name": "string.quoted.double.FortiOS",
+            "name": "string.quoted.double.fortios",
             "begin": "\"",
             "end": "\"",
             "patterns": [
                 {
-                    "name": "constant.character.escape.FortiOS",
+                    "name": "constant.character.escape.fortios",
                     "match": "\\\\."
-                }
-            ]
-        }
-		"ip-addresses": {
-            "patterns": [
-                {
-                    "name": "constant.numeric.ip-address.FortiOS",
-                    "match": "(\"?)(\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\s+(?:\\d{1,3}\\.){3}\\d{1,3}|/\\d{1,2})?\\b)\\1"
                 }
             ]
         }
