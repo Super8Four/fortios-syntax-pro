@@ -6,10 +6,16 @@
             "include": "#config-blocks"
         },
         {
+            "include": "#subcommands"
+        },
+        {
             "include": "#commands"
         },
         {
             "include": "#strings"
+        },
+        {
+            "include": "#ip-addresses"
         }
     ],
     "repository": {
@@ -20,11 +26,11 @@
                     "begin": "\\bconfig\\s+(\\w+)\\b",
                     "end": "\\bend\\b",
                     "beginCaptures": {
-                        "1": { "name": "keyword.command.fortios" }
+                        "1": { "name": "keyword.major-command.fortios" }
                     },
                     "patterns": [
                         {
-                            "include": "#commands"
+                            "include": "#subcommands"
                         }
                     ]
                 },
@@ -34,9 +40,27 @@
                     "end": "\\bnext\\b",
                     "patterns": [
                         {
-                            "include": "#commands"
+                            "include": "#subcommands"
                         }
                     ]
+                }
+            ]
+        },
+        "subcommands": {
+            "patterns": [
+                {
+                    "name": "keyword.subcommand.fortios",
+                    "match": "\\bset\\s+(\\w+(-\\w+)*)\\b",
+                    "captures": {
+                        "1": { "name": "variable.name.fortios" }
+                    }
+                },
+                {
+                    "name": "keyword.other-subcommand.fortios",
+                    "match": "\\b(show|get)\\s+(\\w+(-\\w+)*)\\b",
+                    "captures": {
+                        "2": { "name": "variable.parameter.fortios" }
+                    }
                 }
             ]
         },
@@ -44,15 +68,7 @@
             "patterns": [
                 {
                     "name": "keyword.other.fortios",
-                    "match": "\\b(set|show|get|edit|config|next|end)\\b"
-                },
-                {
-                    "name": "constant.numeric.ip-address.fortios",
-                    "match": "(\"?)(\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\s+(?:\\d{1,3}\\.){3}\\d{1,3}|/\\d{1,2})?\\b)\\1"
-                },
-                {
-                    "name": "variable.parameter.fortios",
-                    "match": "\\b\\w+(-\\w+)*\\b"
+                    "match": "\\b(edit|next|end)\\b"
                 }
             ]
         },
@@ -64,6 +80,18 @@
                 {
                     "name": "constant.character.escape.fortios",
                     "match": "\\\\."
+                }
+            ]
+        },
+        "ip-addresses": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.ip-address.fortios",
+                    "match": "(\"?)(\\b(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\s+(?:\\d{1,3}\\.){3}\\d{1,3}|/\\d{1,2})?\\b)\\1"
+                },
+                {
+                    "name": "constant.numeric.ipv6-address.fortios",
+                    "match": "(\"?)(\\b(?:[A-Fa-f0-9]{1,4}:){7}[A-Fa-f0-9]{1,4}\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,7}:\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,6}:[A-Fa-f0-9]{1,4}\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,5}:(?:[A-Fa-f0-9]{1,4}:){1,4}\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,4}:(?:[A-Fa-f0-9]{1,4}:){1,5}\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,3}:(?:[A-Fa-f0-9]{1,4}:){1,6}\\b|\\b(?:[A-Fa-f0-9]{1,4}:){1,2}:(?:[A-Fa-f0-9]{1,4}:){1,7}\\b|\\b[A-Fa-f0-9]{1,4}:(?:(?:[A-Fa-f0-9]{1,4}:){1,7})\\b)\\1"
                 }
             ]
         }

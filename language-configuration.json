@@ -5,7 +5,6 @@
     "brackets": [
         ["config", "end"],
         ["edit", "next"],
-        ["set", "end"],
         ["(", ")"],
         ["[", "]"],
         ["{", "}"]
@@ -13,7 +12,6 @@
     "autoClosingPairs": [
         ["config", "end"],
         ["edit", "next"],
-        ["set", "end"],
         ["\"", "\""],
         ["'", "'"],
         ["(", ")"],
@@ -23,7 +21,6 @@
     "surroundingPairs": [
         ["config", "end"],
         ["edit", "next"],
-        ["set", "end"],
         ["\"", "\""],
         ["'", "'"],
         ["(", ")"],
@@ -31,7 +28,7 @@
         ["{", "}"]
     ],
     "indentationRules": {
-        "increaseIndentPattern": "(?i)^(.*\\b(config|edit|set)\\b.*[^{])$",
+        "increaseIndentPattern": "(?i)^(.*\\b(config|edit)\\b.*[^{])$",
         "decreaseIndentPattern": "(?i)^\\s*(\\bend\\b|\\bnext\\b).*"
     },
     "wordPattern": "/\\b(\\w+(-\\w+)*)\\b/"
